@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {LoginForm} from "../index"
 import {MyFormValues} from "../LoginForm/LoginForm"
+import { useHistory } from "react-router-dom";
 
 const host = 'https://tager.dev.ozitag.com'
 const url = host + '/api/auth/user'
@@ -8,6 +9,15 @@ const url = host + '/api/auth/user'
 // email: 'user@ozitag.com', password: 'user',
 
 export const PageAuth = () => {
+    const history = useHistory();
+
+    useEffect(() => {
+        const loginData = localStorage.getItem('loginData')
+        if (loginData) {
+            history.push("/");
+        }
+    },[])
+
     const authenticate = async (values: MyFormValues) => {
         const body = JSON.stringify({...values, clientId: 1})
         try {
@@ -23,6 +33,9 @@ export const PageAuth = () => {
             if (!response.ok) {
                 throw new Error(data.message);
             }
+            console.log({data, response})
+            localStorage.setItem('loginData', JSON.stringify(data.data));
+            history.push("/");
         } catch (error) {
             alert(error.message || 'Something went wrong')
         }
