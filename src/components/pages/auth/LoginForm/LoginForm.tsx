@@ -1,9 +1,13 @@
 import React from 'react';
 import {Formik, Field, Form} from "formik";
 
-type MyFormValues = {
+export type MyFormValues = {
     email: string
     password: string
+}
+
+type PropsType = {
+    authenticate: (values: MyFormValues) => void
 }
 
 const validateEmail= (value: string): string | undefined =>  {
@@ -18,20 +22,21 @@ const validateEmail= (value: string): string | undefined =>  {
 
 const validatePassword = (value: string): string | undefined => {
     let error;
-    if (value.length < 6) {
-        error = 'Minimum 6 symbols required';
+    if (value.length < 4) {
+        error = 'Minimum 4 symbols required';
     }
     return error;
 }
 
-export const LoginForm = () => {
+export const LoginForm = ({authenticate}: PropsType) => {
     const initialValues: MyFormValues = {email: '', password: ''}
+
     return (
         <div>
             <Formik
                 initialValues={initialValues}
                 onSubmit={async (values) => {
-                    console.log({values})
+                    authenticate(values)
                 }}
             >
                 {({ errors, touched, isValidating }) => (
