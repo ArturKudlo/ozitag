@@ -1,2 +1,2 @@
-export {PageAuth} from "./auth/PageAuth";
-export {LoginForm} from "./auth/LoginForm"
+export {PageAuth} from "./auth";
+export {PageProfile} from "./profile"
