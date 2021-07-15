@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import { useHistory } from "react-router-dom";
+import "./PageProfile.css"
 
 const host = 'https://tager.dev.ozitag.com'
 const url = host + '/api/tager/user/profile'
@@ -50,11 +51,11 @@ export const PageProfile = () => {
     }
 
     return (
-        <div>
+        <div className='profile__content'>
             <h2>Page Profile</h2>
             <h4>Name: {userData?.name}</h4>
             <h4>Email: {userData?.email}</h4>
-            <button onClick={logout}>Log Out</button>
+            <button className='profile__content--logout' onClick={logout}>Log Out</button>
         </div>
     )
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import {Formik, Field, Form} from "formik";
+import "./LoginForm.css";
 
 export type MyFormValues = {
     email: string
@@ -32,7 +33,7 @@ export const LoginForm = ({authenticate}: PropsType) => {
     const initialValues: MyFormValues = {email: '', password: ''}
 
     return (
-        <div>
+        <>
             <Formik
                 initialValues={initialValues}
                 onSubmit={async (values) => {
@@ -40,15 +41,15 @@ export const LoginForm = ({authenticate}: PropsType) => {
                 }}
             >
                 {({ errors, touched, isValidating }) => (
-                    <Form>
-                        <Field name="email" type="email" validate={validateEmail}/>
-                        {errors.email && touched.email && <div>{errors.email}</div>}
-                        <Field name="password" type="password" validate={validatePassword}/>
-                        {errors.password && touched.password && <div>{errors.password}</div>}
-                        <button type="submit">Submit</button>
+                    <Form className='form__content'>
+                        <Field className='form__content--email btn' name="email" type="email" placeholder="email" validate={validateEmail}/>
+                        {errors.email && touched.email && <div className='form__error'>{errors.email}</div>}
+                        <Field className='form__content--password btn' name="password" type="password" placeholder="password" validate={validatePassword}/>
+                        {errors.password && touched.password && <div className='form__error'>{errors.password}</div>}
+                        <button className='form__content--submit btn' type="submit">Submit</button>
                     </Form>
                 )}
             </Formik>
-        </div>
+        </>
     )
 }
