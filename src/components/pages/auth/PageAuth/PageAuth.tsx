@@ -6,8 +6,6 @@ import { useHistory } from "react-router-dom";
 const host = 'https://tager.dev.ozitag.com'
 const url = host + '/api/auth/user'
 
-// email: 'user@ozitag.com', password: 'user',
-
 export const PageAuth = () => {
     const history = useHistory();
 
@@ -43,7 +41,7 @@ export const PageAuth = () => {
 
     return (
         <div>
-            <h2>Please Authorize</h2>
+            <h2>Please, authorize!</h2>
             <LoginForm authenticate={authenticate}/>
         </div>
     )
