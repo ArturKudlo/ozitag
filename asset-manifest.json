@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/ozitag/static/css/main.a825c65d.chunk.css",
+    "main.js": "/ozitag/static/js/main.93cc175f.chunk.js",
+    "main.js.map": "/ozitag/static/js/main.93cc175f.chunk.js.map",
+    "runtime-main.js": "/ozitag/static/js/runtime-main.a09227cd.js",
+    "runtime-main.js.map": "/ozitag/static/js/runtime-main.a09227cd.js.map",
+    "static/js/2.c700ad63.chunk.js": "/ozitag/static/js/2.c700ad63.chunk.js",
+    "static/js/2.c700ad63.chunk.js.map": "/ozitag/static/js/2.c700ad63.chunk.js.map",
+    "static/js/3.f99ead67.chunk.js": "/ozitag/static/js/3.f99ead67.chunk.js",
+    "static/js/3.f99ead67.chunk.js.map": "/ozitag/static/js/3.f99ead67.chunk.js.map",
+    "index.html": "/ozitag/index.html",
+    "static/css/main.a825c65d.chunk.css.map": "/ozitag/static/css/main.a825c65d.chunk.css.map",
+    "static/js/2.c700ad63.chunk.js.LICENSE.txt": "/ozitag/static/js/2.c700ad63.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a09227cd.js",
+    "static/js/2.c700ad63.chunk.js",
+    "static/css/main.a825c65d.chunk.css",
+    "static/js/main.93cc175f.chunk.js"
+  ]
+}
